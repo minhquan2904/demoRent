@@ -1,0 +1,23 @@
+
+
+
+/* breadcrum */
+.breadcrumb{
+  background: #cccccc;
+  color: #333333;
+}
+
+/* progress bar */
+.progress-bar{
+  background: #333333;
+  color: #ffffff;
+}
+
+.dash-box{
+  text-align: center;
+}
+.main-color-bg{
+  background-color: #e74c3c !important;
+  border-color: #c0392b !important;
+  color: #ffffff;
+}

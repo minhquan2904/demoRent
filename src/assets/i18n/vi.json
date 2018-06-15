@@ -1,0 +1,42 @@
+{
+  "HOME": {
+    "TITLE":    "Tìm kiếm nơi ở hoàn hảo cho bạn",
+    "SELECT":   "Change language",
+    "MODERN":   "hiện đại",
+    "FAST":     "nhanh chóng",
+    "RELIABLE": "hợp lí"
+  },
+  "PAGE": {
+    "HOME":     "Trang chủ",
+    "D9":       "Quận 9",
+    "DThuDuc":  "Quận Thủ Đức",
+    "MORE":     "Khác",
+    "ADD":      "Thêm địa điểm",
+    "LOGIN":    "Đăng nhập",
+    "LOGOUT":   "Đăng xuất",
+    "OVERVIEW": "Tìm quanh bạn"
+  }, 
+  "ADMIN": {
+    "DASHBOARD":      "Bảng điều  khiển",
+    "MANAGE":         "Quản lý trang của bạn",
+    "OVERVIEW_MONTH": "Thống kê hàng tháng",
+    "OVERVIEW_YEAR":  "Thống kê tổng",
+    "USERS":          "Người dùng",
+    "USERS_LASTEST":  "Người dùng vừa đăng kí",
+    "POSTS":          "Bài viết",
+    "POSTS_VERYFIED": "Bài viết đã duyệt",
+    "VISITORS":       "Lượt xem",
+    "FIRSTNAME":      "Tên",
+    "LASTNAME":       "Họ",
+    "ACTION":         "Hành động",
+    "VIEW_ACCEPTED":  "Hiển thị bài đăng đã duyệt",
+    "PENDING_MODEL":  "Bài đăng chờ duyệt",
+    "ACCEPTED_MOTEL": "Bài đăng đã duyệt"
+  },
+  "TABLE": {
+    "NO":       "Thứ tự",
+    "CREATED":  "Ngày đăng",
+    "ADDRESS":  "Địa chỉ",
+    "ACTION":   "Tác vụ"
+  }
+}

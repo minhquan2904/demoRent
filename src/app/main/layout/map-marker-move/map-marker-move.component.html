@@ -1,0 +1,29 @@
+<div class="form-group" >
+    <mat-form-field class="col-sm-6" style="width: calc(100% - 100px); margin: auto;"> 
+        <input matInput placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"  #search [formControl]="searchControl" style="width:500px;">            
+    </mat-form-field>
+    
+</div>
+<div id="map_container"></div>
+<agm-map  [latitude]="latitude" 
+          [longitude]="longitude" 
+          [scrollwheel]="false" 
+          [zoom]="zoom"
+          (mapClick)="onMapClick($event)"
+          >
+  <agm-marker [latitude]="latitude" [longitude]="longitude">
+    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+        <ng-template>
+         Your position
+        </ng-template>
+      </agm-snazzy-info-window>
+  </agm-marker>
+</agm-map>
+<div class="col-xs-12">
+    <div class="col-xs-6">
+        input
+    </div>
+    <div class="col-xs-6">
+        <button mat-raised-button color="primary"><mat-icon>search</mat-icon> Search</button>
+    </div>
+</div>

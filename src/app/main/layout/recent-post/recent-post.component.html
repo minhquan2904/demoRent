@@ -1,0 +1,52 @@
+<div class="row recent" style="margin-left: 0; margin-right: 0;"> 
+    <div class="recent-title">
+      <div class="hr-title"></div>
+      <div class="rencent-title-h4">
+          <h2>Newest Post</h2>
+      </div>
+      <div class="hr-title"></div>
+        
+    </div>
+  <div class="wrapper">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card"   *ngFor="let motel of motels" style="margin-bottom:20px;margin-top:20px;">
+          <mat-card class="example-card"  >
+              <div class="imageHolder">
+                <a [routerLink]="['/item', motel._id]">
+                <img mat-card-image [src]="'/assets/motel.img[0]'" alt="Photo of a Motel" style="width: 400px; height: 251px;">
+                </a>
+                <div class="caption"><br>{{motel.price}} VND</div>
+              </div> 
+             
+              <mat-card-content>
+                
+                <div class="infor">
+                  <div class="logo">
+                      <img src="../assets/mini-logo.jpg" >
+                  </div>
+                  
+                    <div class="address">
+                        <div class="category">
+                            <p>{{motel.category}}</p>
+                          </div>
+                        {{motel.add}} , {{motel.street}}, {{motel.ward}}, {{motel.district}} <br>
+                        {{motel.city}}
+                        <p>Cách thức liên hệ: {{motel.contact}}</p>
+                    </div>
+                </div>
+                
+               
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-raised-button color="warn" *ngIf="moderator" (click)="_delete(motel._id)">DELETE</button>
+                <button mat-button><a [routerLink]="['/item', motel._id]">Show Details</a></button>
+              </mat-card-actions>
+            </mat-card>
+          
+      </div>
+  </div>
+    
+
+
+</div>
+    

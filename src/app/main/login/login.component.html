@@ -1,0 +1,89 @@
+
+<div class="login">
+  <mat-grid-list cols="3">
+    <mat-grid-tile></mat-grid-tile>
+    <!-- Writing markup for login starts -->
+    <mat-grid-tile class='login-element'>
+        <div class="login-container">
+  
+            <!-- Template Header starts -->
+            <div class="login-box-header">
+                <h1>LOGIN</h1>
+                
+            </div>
+            <!-- Template Header ends -->
+            <alert></alert>
+            <!-- Template Body starts -->
+            <div class="login-box-body">
+  
+                <!-- Markup for getting Username starts -->
+                <mat-grid-list cols="9" rowHeight="75px">
+                    <mat-grid-tile [rowspan]="1" class="login-icon">
+                        <mat-icon>lock</mat-icon>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="7">
+                        <mat-input-container class="justifier">
+                            <input style="color:black;" matInput placeholder="Username" text="text" required id="username" name="username" [(ngModel)]="user.username"  #username="ngModel" [ngModelOptions]="{standalone: true}" >
+                            <mat-error  *ngIf="username.invalid && (username.dirty || username.touched)">
+                              Usename cannot be blank
+                            </mat-error>
+                           
+                        </mat-input-container>
+                       
+                    </mat-grid-tile>
+                    
+                </mat-grid-list>
+                <!-- Markup for getting Username ends -->
+                <div class="wrapper">
+                  <div></div>
+                  <div> 
+                     <p class="help-block" *ngIf="this.handleValidate.usnMinLength" style="margin-left: auto; font-size: 12px; color: red;">
+                        Username requires atleast 6 character </p>  
+                    <p class="help-block" *ngIf="this.handleValidate.usnMaxLength" style="margin-left: auto; font-size: 12px; color: red;">
+                        Username max length is 32 character
+                      </p>  
+                       
+                  </div>
+                  <div></div>
+                </div>
+              
+                <!-- Markup for getting Password starts -->
+                <mat-grid-list cols="9" rowHeight="100px">
+                    <mat-grid-tile [rowspan]="1"  class="login-icon">
+                        <mat-icon>remove_red_eye</mat-icon>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="7">
+                        <mat-input-container class="justifier">
+                            <input style="color:black;" matInput placeholder="Password" text="password" type="password" required id="password" name="password" [(ngModel)]="user.password"  #password="ngModel" [ngModelOptions]="{standalone: true}">
+                        </mat-input-container>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <!-- Markup for getting Password ends -->
+                <div class="wrapper">
+                    <div></div>
+                    <div>
+                        <p class="help-block" *ngIf="this.handleValidate.pwdMinLength" style="margin-left: auto; font-size: 12px; color: red;">
+                            password requires atleast 6 character</p>  
+                            <p class="help-block" *ngIf="this.handleValidate.pwdMaxLength" style="margin-left: auto; font-size: 12px; color: red;">
+                                password max length is 32 character
+                              </p>  
+                    </div>
+                    <div></div>
+                  </div>
+                <button mat-raised-button class="login-button" [disabled]="username.invalid || password.invalid " (click)="before_login();"> 
+                    <mat-icon>input</mat-icon> Login
+                </button>
+                <p style="color: #7986CB">Don't have account? <button mat-button color="primary" (click)="openDialog()">Register</button> </p>
+                
+  
+            </div>
+            <!-- Template Body ends -->
+            
+        </div>
+    </mat-grid-tile>
+    <!-- Writing markup for login ends -->
+    <mat-grid-tile></mat-grid-tile>
+  
+  </mat-grid-list>
+</div>
+<app-footer style="margin-top: 0px!important"></app-footer>

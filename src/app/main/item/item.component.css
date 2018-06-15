@@ -1,0 +1,147 @@
+.temp{
+    height: 100px;
+}
+
+/* Test css grid */
+.wrapper{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+}
+.wrapper > div{
+    background: #eee;
+    padding: 1em;
+}
+.wrapper > div:nth-child(odd){
+    background: #FAFAFA;
+}
+.img-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-gap: 5px;
+}
+.img-wrapper > div{
+    background: white;
+    padding: 1em;
+}
+.img-wrapper > div:nth-child(odd){
+    background:#FAFAFA;
+}
+.info-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+    grid-gap: 5px;
+}
+.info-wrapper > div{
+    background: #FAFAFA;
+
+    padding: 1em;
+}
+.info-wrapper > div:nth-child(odd){
+    background: #FAFAFA;
+}
+/* comment box */
+.cmt-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-gap: 1em;
+}
+.cmt-wrapper > div{
+    background: #eee;
+    padding: 1em;
+}
+.cmt-wrapper > div:nth-child(odd){
+    background: #eee;
+}
+/* Comment list grid */
+.comment-wrapper{
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-gap: 1em;
+}
+.comment-wrapper > div {
+    background: #eee;
+}
+/*  */
+body{
+    background: #eee;
+}
+.business-header {
+    height: 50vh;
+    min-height: 300px;
+    max-height: 400px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  .card {
+    height: 100%;
+  }
+  .img_home img{
+    display: block; /*for the img inside your div */ 
+    margin: 0 auto ;
+     width: 100%;
+     max-height: 400px;
+  }
+  .iframe-container{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.iframe-container > *{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    
+    width: 100%;
+}
+
+
+.fixmarker{
+    position:fixed;
+}
+.user-info-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .wrapper{
+        padding: 10px 0px 65px 0px;
+        display: block;
+    }
+    .user-info{
+        display: none;
+    }
+    .user-info-mobile{
+        z-index: 999;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: white !important;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+    }
+}
+@media screen and (max-width: 400px) {
+    .wrapper{
+        padding: 50px 0px 65px 0px;
+        display: block;
+    }
+
+}
+/* FIX IMG */
+img {
+    margin: auto;
+}

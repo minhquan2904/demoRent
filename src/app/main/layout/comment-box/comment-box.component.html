@@ -1,0 +1,13 @@
+
+<div class="widget-area no-padding blank">
+  <div class="status-upload">
+    <alert></alert>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <textarea matInput placeholder="Autosize textarea" name="content" [(ngModel)]="comment.content"  #content="ngModel" [ngModelOptions]="{standalone: true}"></textarea>
+      <mat-error  *ngIf="content.invalid && (content.dirty || content.touched)">
+        Content can not be blank
+      </mat-error>
+      <button type="submit" mat-raised-button color="accent"><i class="fa fa-share"></i> Share</button>
+    </form>
+  </div><!-- Status Upload  -->
+</div><!-- Widget Area -->

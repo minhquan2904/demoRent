@@ -1,0 +1,10 @@
+agm-map {
+    height: 300px;
+    width: 100%;
+  }
+input{
+  width: 100%;
+}
+mat-form-field {
+  width: 100%;
+}

@@ -1,0 +1,123 @@
+<app-nav></app-nav>
+
+<div class="temp"></div>
+    <alert></alert>
+      <div class="wrapper">
+        <div>
+          <div class="img-wrapper">
+            <div></div>
+            <div>
+              <!-- TAB IMG + MAP -->
+                <mat-tab-group>
+                    <mat-tab label="Image">
+                      <!-- MOTEL IMAGE -->
+                      <!-- <div *ngFor="let item of img">
+                        {{item}}
+                      </div> -->
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" *ngFor="let item of img; let i = index" [attr.data-slide-to]="i" ngClass="i == 0 ? 'active' : ''"></li>
+                        </ol>
+                    
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                          <div *ngFor="let j of img; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
+                            <img src="/assets/{{img[k]}}" alt="Event Image" class="img-responsive" >
+                        </div>
+                        
+                          
+                        </div>
+                    
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                   
+                      
+                      </mat-tab>
+                      <mat-tab #mapTab label="Map">
+                          <div *ngIf="mapTab.isActive">
+                            <app-map-service [myData]="data"></app-map-service>
+                          </div>
+                      </mat-tab>
+                </mat-tab-group>
+              
+            </div>
+            <div></div>
+          </div>
+          <!-- MOTEL INFOMATION -->
+          <div class="info-wrapper">
+              <!-- Description -->
+              <div></div>
+             <div>
+                <div class="descripsion">
+                    <h4 class="mt-4">About this location</h4>
+                    {{motel.description}}   
+                </div>
+             </div>
+             <!-- Address  -->
+             <div>
+                <div class="address">
+                    <address>
+                        <h4>Address  </h4>
+                        <strong>{{motel.district}}, {{motel.city}} </strong>
+                        <br>{{motel.add}}, {{motel.street}}
+                        <br>{{motel.ward}}
+                        <br>
+                      </address>
+                </div>
+                <button mat-icon-button color="warn"  (click)="onNavigate()">           
+                  <mat-icon aria-label="Example icon-button with a heart icon">room</mat-icon>
+                  Show location
+              </button>
+             </div>
+             <div></div>
+           </div>
+       
+          </div>
+
+         
+        <!-- USER INFO -->
+        <div class="user-info">
+          <app-user-info [myData]="user"></app-user-info>
+        </div>
+        <!-- COMMENT AREA -->
+        
+        
+        <div class="user-info-mobile">
+            <div></div>
+            
+            <div>
+                <button mat-raised-button color="primary" (click)="openDialog()">Show contact info</button>
+            </div>
+
+            <div>
+              
+            </div>
+        </div>
+      </div>
+      <div class="cmt-wrapper">
+        <div></div>
+        <div><app-comment-box [exData1]="user" [motelID]="motel_id"></app-comment-box></div>
+        <div></div>
+      </div>
+      <div class="comment-wrapper">
+        <div></div>
+        <div>
+            <div style="height:20px;"> </div> 
+            <div>
+              <!-- comment list -->
+              <app-comment-list></app-comment-list>
+            </div>
+            
+        </div>
+        <div></div>
+          
+      </div>

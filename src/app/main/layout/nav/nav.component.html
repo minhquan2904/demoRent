@@ -1,0 +1,38 @@
+<div class="contact-header">
+    <div class="col-xs-6 contact-float-left">
+        <p><span style="padding-right: 10px"><a (click)="translate.use('vi')">VI</a></span> | <span style="padding-left:10px;"><a (click)="translate.use('en')">EN</a></span></p>
+    </div>
+</div>
+<mat-toolbar color="primary">
+    
+    <button mat-button routerLink="/" [ngStyle]="{'color': colorStyle === 'WHITE' ? 'white' : 'black'}">
+    <mat-icon>home</mat-icon> 
+    {{ 'PAGE.HOME' | translate}}</button>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm [ngStyle]="{'color': colorStyle === 'WHITE' ? 'white' : 'black'}">
+        <button mat-button routerLink="['/home']">{{ 'PAGE.HOME' | translate}}</button>
+        <button mat-button routerLink="['/home']">{{ 'PAGE.D9' | translate}}</button>
+        <button mat-button routerLink="['/home']">{{ 'PAGE.DThuDuc' | translate}}</button>
+        <button mat-button routerLink="['/home']">{{ 'PAGE.MORE' | translate}}</button>
+        <button mat-button [routerLink]="['/add']">{{ 'PAGE.ADD' | translate}}</button>
+        <button mat-button [routerLink]="['/login']" *ngIf="!loginStatus">{{ 'PAGE.LOGIN' | translate}}</button>
+        <button mat-button [routerLink]="['/login']" *ngIf="loginStatus">{{ 'PAGE.LOGOUT' | translate}}</button>
+        <button mat-button [routerLink]="['/show-map']" [queryParams]="{ lat: data.lat, lng: data.lng}">{{ 'PAGE.OVERVIEW' | translate}}</button>
+
+
+        
+    </div>
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <mat-icon>menu</mat-icon>
+    </button>
+
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item routerLink="['/home']">Home</button>
+        <button mat-menu-item [routerLink]="['/add']">Add</button>
+        <button  mat-menu-item [routerLink]="['/login']">{{loginStatus}}</button>
+        <button  mat-menu-item [routerLink]="['/show-map']" [queryParams]="{ lat: data.lat, lng: data.lng}">Overview</button>
+    <!--<button mat-menu-item>Help</button>-->
+</mat-menu>

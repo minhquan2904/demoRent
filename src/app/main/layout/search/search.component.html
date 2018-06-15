@@ -1,0 +1,32 @@
+<section id="home" class="home">
+  <div class="home_overlay">
+      <div class="container">
+          <div class="row">
+              <div class="main_slider_area">
+                  <div class="slider">
+                      <div class="single_slider">
+                          <p class="home-title">{{ 'HOME.TITLE' | translate}}</p>
+                          <p>{{ 'HOME.MODERN' | translate}}  -  {{ 'HOME.FAST' | translate}}  -  {{ 'HOME.RELIABLE' | translate}}</p>
+                          
+                          <div class="col-sm-8 col-sm-offset-2">
+                              <div class="home_searce_domain_area">
+                                  <div class="input-search">
+                                      <mat-form-field>
+                                        <input type="text" matInput placeholder="Type text here" [(ngModel)] = "query">
+                                      </mat-form-field>
+                                          
+                                            
+                                     
+                                      <button mat-raised-button (click)="onSearchClick()" color="primary"><mat-icon>search</mat-icon>Search</button>
+                                      <button mat-raised-button color="warn"><mat-icon>assignment</mat-icon>Advance</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section><!-- End of Banner Section -->

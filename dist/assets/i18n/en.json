@@ -1,0 +1,43 @@
+{
+  "HOME": {
+    "TITLE":    "Rent your perfect home",
+    "SELECT":   "Change language",
+    "MODERN":   "modern",
+    "FAST":     "fast",
+    "RELIABLE": "reliable"
+  },
+  "PAGE": {
+    "HOME": "Home", 
+    "D9": "District 9",
+    "DThuDuc": "Thu Duc District",
+    "MORE": "More",
+    "ADD": "Add new accommodation",
+    "LOGIN": "Log in",
+    "LOGOUT": "Log out",
+    "OVERVIEW": "Overview"
+  },
+  "ADMIN": {
+    "DASHBOARD":      "Dashboard",
+    "MANAGE":         "Manage your site",
+    "OVERVIEW_MONTH": "Your monthly overview",
+    "OVERVIEW_YEAR":  "Your total overview",
+    "USERS":          "Users",
+    "USERS_LASTEST":  "Lastest Users",
+    "POSTS":          "Posts",
+    "POSTS_VERYFIED": "Post Veryfied",
+    "VISITORS":       "Visitors",
+    "FIRSTNAME":      "First name",
+    "LASTNAME":       "Last name",
+    "ACTION":         "Action",
+    "VIEW_ACCEPTED":  "View accepted motel",
+    "PENDING_MOTEL":  "Pending motel",
+    "ACCEPTED_MOTEL": "Accepted motel"
+
+  },
+  "TABLE": {
+    "NO":       "No.",
+    "CREATED":  "Created date",
+    "ADDRESS":  "Address",
+    "ACTION":   "Action"
+  }
+}

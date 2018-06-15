@@ -1,0 +1,48 @@
+
+
+.fill-remaining-space {
+    /*This fills the remaining space, by using flexbox.  
+   Every toolbar row uses a flexbox row layout. */
+   flex: 1 1 auto;
+ }
+
+.mat-toolbar.mat-primary {
+    background: transparent;
+    color: #ffffff;
+    font-weight: bolder;
+}
+.mat-button a{
+    text-decoration: none;    
+    color:black;
+    font-weight: bolder;
+}
+.mat-button {
+    font-weight: bolder;
+}
+.mat-menu-item a{
+    text-decoration: none;    
+ 
+}
+.mat-toolbar {
+
+    position: fixed;
+    z-index: 999;
+}
+.contact-header {
+    height: 40px;
+    line-height: 40px;
+    background: #fff url(/assets/pc_skinheader.jpg) 50% 100% no-repeat;
+    background-size: cover;
+    
+}
+.contact-float-left {
+    float: left;
+    color: white;
+}
+.contact-float-left a{
+    color: #b0b0b0;
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+}

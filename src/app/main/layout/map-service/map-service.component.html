@@ -1,0 +1,29 @@
+<div *ngFor="let value of checkboxTypes" class="example-section">
+    <mat-checkbox class="example-margin" [value]="value" [checked]="value === 'store' || value === 'school' || value==='hospital' ? true : false "  (change)="onChange($event)">{{ value }}</mat-checkbox> 
+</div>
+
+ <!-- MAP -->
+<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker  [latitude]="latitude" [longitude]="longitude">
+        <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+            <ng-template>
+             Your position
+            </ng-template>
+          </agm-snazzy-info-window>
+    </agm-marker>  
+    <div *ngFor="let item of listService">
+        <agm-marker  [latitude]="item.lat" [longitude]="item.lng" [iconUrl]="item.icon">
+          <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+              <ng-template>
+               <p>{{item.name}}</p>
+              </ng-template>
+            </agm-snazzy-info-window>
+       </agm-marker> 
+      </div> 
+      <agm-circle [latitude]="latitude" [longitude]="longitude" 
+                    [radius]="radius" [fillColor]="circleProps.fillColor" 
+                    [strokeColor]="circleProps.strokeColor"
+                    [fillOpacity]="circleProps.fillOpacity"
+                    [strokeOpacity]= "circleProps.strokeOpacity" 
+                    ></agm-circle>
+</agm-map>

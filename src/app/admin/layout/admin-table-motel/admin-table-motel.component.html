@@ -1,0 +1,48 @@
+<!-- Lastest user -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <button mat-raised-button color="primary" (click)="handleAccepted()">View accepted posts</button>
+  </div>
+  <div class="panel-body">
+      <mat-table #table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element; let i = index"> {{i}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="created">
+        <mat-header-cell *matHeaderCellDef> Created date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> Demo day </mat-cell>
+      </ng-container>
+  
+     
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.add}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+          <mat-cell *matCellDef="let element"> Action here </mat-cell>
+        </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+      
+        <mat-tab-group>
+                <mat-tab label="Tab 1">
+                   
+                </mat-tab>
+                <mat-tab label="Tab 2" *ngIf="viewAccepted">Content 2</mat-tab>
+        </mat-tab-group>
+      
+  </div>
+</div>

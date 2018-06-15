@@ -1,0 +1,18 @@
+.contact-header {
+    height: 40px;
+    line-height: 40px;
+    background: #fff url(/assets/pc_skinheader.jpg) 50% 100% no-repeat;
+    background-size: cover;
+    
+}
+.contact-float-left {
+    float: left;
+    color: white;
+}
+.contact-float-left a{
+    color: #b0b0b0;
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+}

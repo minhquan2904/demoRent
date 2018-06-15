@@ -1,0 +1,155 @@
+<app-user-header [username]="user.firstname"></app-user-header>
+<div class="container-fluid">
+  <div class="row" style="margin-top: 65px;">
+    <div class="col-sm-3 col-xs-12">
+        <mat-card>
+          <div class="img-avt">
+              <img class="img-responsive" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          </div>
+            
+            <div class="text-center"> 
+              <button mat-button color="primary">Update</button>
+            </div>
+           
+          </mat-card>
+          <mat-card>
+            <mat-card-content>
+              <h4 class="example-h2">Level {{user.level}}</h4>
+              <div class="wrapper">
+                <div></div>
+                <div>
+                  <div clas="spinner-percent">
+                      <mat-progress-spinner
+                      style="margin:0 auto;"
+                      class="example-margin"
+                      [color]="color"
+                      [mode]="mode"
+                      [value]="value">
+                    </mat-progress-spinner>
+
+                    <p class="percent">{{value}}%</p>
+                  </div>
+                    
+                  <p>Your exp: {{user.exp}}/{{maxExp}}</p> 
+                </div>
+                <div></div>
+              </div>
+              
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div class="col-sm-9 col-xs-12">
+      <mat-card style="height:100%;">
+          <mat-card-content>
+              <h4 class="example-h2">Your infomation</h4>
+              
+          </mat-card-content>
+          <mat-card-content>
+              <mat-accordion class="example-headers-align">
+                  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Personal data
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Type your name
+                        <mat-icon>account_circle</mat-icon>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <mat-form-field>
+                      <input matInput placeholder="First name" [(ngModel)]= "user.firstname" #firstname="ngModel" [ngModelOptions]="{standalone: true}" required>
+                      <mat-error  *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                        Firstname can not be blank
+                      </mat-error>
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                      <input matInput placeholder="Last name" [(ngModel)]= "user.lastname" #lastname="ngModel" [ngModelOptions]="{standalone: true}" required>
+                      <mat-error  *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+                        Lastname can not be blank
+                      </mat-error>
+                    </mat-form-field>
+                
+                    <mat-action-row>
+                      <button mat-button color="primary" (click)="nextStep()">Next</button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                
+                  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Contact infomation
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Type your email and phone
+                        <mat-icon>map</mat-icon>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <mat-form-field>
+                      <input matInput placeholder="Email" email [(ngModel)]= "user.email" #email="ngModel" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Phone" phone [(ngModel)]= "user.phone" #phone="ngModel" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                
+                    <mat-action-row>
+                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                      <button mat-button color="primary" (click)="nextStep()">Next</button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                
+                  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        About yourself
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Type something about yourself
+                        <mat-icon>date_range</mat-icon>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <mat-form-field>
+                      <input matInput placeholder="..." >
+                    </mat-form-field>
+                    <mat-datepicker #picker></mat-datepicker>
+                
+                    <mat-action-row>
+                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                      <button mat-button color="primary" (click)="nextStep(); update()">End</button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                
+                </mat-accordion>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="btn-wrapper">
+              <div>
+                <button mat-raised-button color="warn" (click)= "changePasswordFlag=!changePasswordFlag">Change password</button>
+              </div>
+              <div>
+                  <button mat-raised-button style="background-color: #8C9EFF!important">See Your posts</button>
+                </div>
+            </div> 
+            
+          </mat-card-footer>
+      </mat-card>
+      <mat-card *ngIf="changePasswordFlag">
+        <div class="mat-card-password">
+            <mat-form-field>
+                <input type="password" matInput placeholder="Current password"  [(ngModel)]= "password.oldPassword" #oldPassword="ngModel" [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+              <mat-form-field>
+                <input type="password" matInput placeholder="New password" [(ngModel)]= "password.newPassword" #newPassword="ngModel" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              <mat-form-field>
+                <input type="password" matInput placeholder="Confirm new password" [(ngModel)]= "password.confirmPassword" #confirmPassword="ngModel" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+              <button mat-raised-button color="warn" (click)="changePassword()">Change</button>
+            </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
